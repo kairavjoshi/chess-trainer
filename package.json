@@ -11,7 +11,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "mongodb": "latest",
+    "mongodb": "^4.1.0",
     "chess.js": "^0.12.0"
   }
 }
