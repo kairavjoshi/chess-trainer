@@ -1,25 +1,12 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 
 export default function Home() {
-  const [boardWidth, setBoardWidth] = useState(400)
-
   useEffect(() => {
-    // Load chess-trainer.js
-    const script = document.createElement('script')
-    script.src = '/chess-trainer.js'
-    script.async = true
-    document.body.appendChild(script)
-
-    // Adjust board size based on window width
-    const handleResize = () => setBoardWidth(Math.min(400, window.innerWidth - 20))
-    window.addEventListener('resize', handleResize)
-    handleResize()
-
-    return () => {
-      window.removeEventListener('resize', handleResize)
-      document.body.removeChild(script)
+    const loadChessTrainer = async () => {
+      await import('../chess-trainer.js')
     }
+    loadChessTrainer()
   }, [])
 
   return (
@@ -33,7 +20,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <div id="board" style={{ width: `${boardWidth}px`, margin: '0 auto' }}></div>
+        <div id="board" style={{ width: '400px', margin: '0 auto' }}></div>
         <p id="message"></p>
         <button id="startTraining">Start Training</button>
         <div id="stats">
