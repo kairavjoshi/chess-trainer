@@ -11,7 +11,7 @@
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "mongodb": "4.9.0",
+    "mongodb": "^3.6.10",
     "chess.js": "0.12.0"
   },
   "devDependencies": {
