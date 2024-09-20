@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export default function Home() {
   useEffect(() => {
-    import('../chess-trainer.js')
+    import('/chess-trainer.js')
   }, [])
 
   return (
